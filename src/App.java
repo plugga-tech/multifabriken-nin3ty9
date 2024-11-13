@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App
 {
-    private static Scanner input = new Scanner(System.in);
+    public static Scanner input = new Scanner(System.in);
 
 //Metod för att rensa skärmen så vi får en ren och snygg meny:
     static void clearTerm()                                     
@@ -14,10 +14,7 @@ public class App
     public static void main(String[] args)
     {
         boolean dispMenu = true;
-        Candy candy1 = new Candy("Strawberry", 56);
-        System.out.println(candy1.getCandFlavor() + ", " + candy1.getCandNumber());
         
-
         while (dispMenu)
         {
             dispMenu = MainMenu.mainMenu();
