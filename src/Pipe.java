@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pipe
 {
     private int pipeDiam;
@@ -7,6 +10,18 @@ public class Pipe
     {
         this.pipeDiam = pipeDiam;
         this.pipeLength = pipeLength;
+    }
+
+    public static List<Pipe> pipes = new ArrayList<Pipe>();
+
+    public static void addPipe()
+    {
+
+    }
+
+    public static List<Pipe>getPipeList()
+    {
+        return pipes;
     }
 
     public int getPipeDiam()

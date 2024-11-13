@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Candy
 {
     private String candFlavor;
@@ -7,6 +10,18 @@ public class Candy
     {
         this.candFlavor = candFlavor;
         this.candNumber = candNumber;
+    }
+
+    public static List<Candy> candies = new ArrayList<Candy>();
+
+    public static void addCandy()
+    {
+
+    }
+
+    public static List<Candy>getCandyList()
+    {
+        return candies;
     }
 
     public String getCandFlavor()
