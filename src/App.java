@@ -14,6 +14,9 @@ public class App
     public static void main(String[] args)
     {
         boolean dispMenu = true;
+        Candy candy1 = new Candy("Strawberry", 56);
+        System.out.println(candy1.getCandFlavor() + ", " + candy1.getCandNumber());
+        
 
         while (dispMenu)
         {
