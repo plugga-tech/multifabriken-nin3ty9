@@ -1,16 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class MainMenu
 {
     public static boolean mainMenu()
     {
-        List<Car> cars = new ArrayList<Car>();
-        List<Pipe> pipes = new ArrayList<Pipe>();
-        List<Candy> candies = new ArrayList<Candy>();
-        List<OatMilk> oatMilks = new ArrayList<OatMilk>();
-
         char menChoice = 0;
 
         App.clearTerm();
@@ -32,7 +24,7 @@ public class MainMenu
             case '1':
 
                 App.clearTerm();
-
+                ViewOrder.viewOrder();
                 App.input.nextLine();
 
                 break;
@@ -40,7 +32,7 @@ public class MainMenu
             case '2':
 
                 App.clearTerm();
-
+                ViewOrder.viewOrder();
                 App.input.nextLine();
 
                 break;
@@ -48,7 +40,7 @@ public class MainMenu
             case '3':
 
                 App.clearTerm();
-                ViewCart.viewCart(cars, pipes, candies, oatMilks);
+                ViewCart.viewCart();
 
                 return false;
 

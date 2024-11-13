@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car
 {
     private String carBrand;
@@ -9,6 +12,13 @@ public class Car
         this.carBrand = carBrand;
         this.carPlate = carPlate;
         this.carColor = carColor;
+    }
+
+    public static List<Car> cars = new ArrayList<Car>();
+
+    public static void addCar()
+    {
+        
     }
 
     public String getCarBrand()
