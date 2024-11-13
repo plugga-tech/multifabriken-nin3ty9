@@ -18,7 +18,12 @@ public class Car
 
     public static void addCar()
     {
-        
+
+    }
+    
+    public static List<Car>getCarList()
+    {
+        return cars;
     }
 
     public String getCarBrand()
