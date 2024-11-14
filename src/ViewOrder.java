@@ -17,7 +17,7 @@ public class ViewOrder
             System.out.println("[4]-=Havremjölk=- ");
             System.out.println("[5] - Tillbaka till huvudmenyn ");
             System.out.println("----------------------------------");
-            System.out.println("Välj en product att beställa eller alternativ 5 för att återvända till huvudmenyn ");
+            System.out.println("Välj en produkt att beställa eller alternativ 5 för att återvända till huvudmenyn ");
         
             orderChoice = App.input.next().charAt(0);
             App.input.nextLine();

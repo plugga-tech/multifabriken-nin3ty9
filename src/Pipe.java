@@ -64,7 +64,7 @@ public class Pipe
         pipes.add(addedPipe);
         App.clearTerm();
         System.out.println("-=Rör=-");
-        System.out.println("Ett rör med diametern " + pipeDiam + " och " + " längden " + pipeLength + " har lagts till i varukorgen. ");
+        System.out.println("Ett rör med diametern " + pipeDiam + "mm och längden " + pipeLength + "mm har lagts till i varukorgen. ");
         App.input.nextLine();
     }
 
