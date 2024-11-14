@@ -1,10 +1,8 @@
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class App
 {
-    public static Scanner input = new Scanner(new InputStreamReader(System.in, StandardCharsets.UTF_8));
+    public static Scanner input = new Scanner(System.in);
 
 //Metod för att rensa skärmen så vi får en ren och snygg meny:
     static void clearTerm()                                     

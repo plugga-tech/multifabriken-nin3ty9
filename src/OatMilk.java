@@ -47,11 +47,24 @@ public class OatMilk
             if (App.input.hasNextDouble())
             {
                 oatfat = App.input.nextDouble();
-                corrChoice1 = true;
+                
+                if (oatfat < 0.1)
+                {
+                    System.out.println("Minsta fetthalt är 0,1%. ");
+                    corrChoice1 = false;
+                    App.input.nextLine();
+                    App.input.nextLine();
+                } 
+                else
+                {
+                    corrChoice1 = true;
+                }
             }
             else
             {
-                System.out.println("Du måste ange ett nummer (minst 0,1). ");
+                System.out.println("Du måste ange en fetthalt (med siffror), decimaler anges med komma. ");
+                App.input.nextLine();
+                App.input.nextLine();
                 oatfat = 0;
                 corrChoice1 = false;
             }
@@ -67,12 +80,25 @@ public class OatMilk
             {
                 
                 oatLiter = App.input.nextDouble();
-                corrChoice2 = true;
+                
+                if (oatLiter < 0.5)
+                {
+                    System.out.println("Minsta mängd är 0,5 liter. ");
+                    corrChoice2 = false;
+                    App.input.nextLine();
+                    App.input.nextLine();
+                }
+                else 
+                {
+                    corrChoice2 = true;
+                }
             }
             else
             {
-                System.out.println("Du måste ange en mängd (minst 0,5). ");
+                System.out.println("Du måste ange en mängd (med siffror), decimaler anges med komma. ");
                 oatLiter = 0;
+                App.input.nextLine();
+                App.input.nextLine();
                 corrChoice2 = false;
             }
             
