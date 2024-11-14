@@ -34,7 +34,56 @@ public class OatMilk
 
     public static void addOatMilk()
     {
+        boolean corrChoice1 = false;
+        boolean corrChoice2 = false;
+        double oatfat;
+        double oatLiter;
+
+        do
+        {
+            App.clearTerm();
+            System.out.println("-=Havremjölk=-");
+            System.out.println("Vilken fetthalt ska havremjölken ha? ");
+            if (App.input.hasNextDouble())
+            {
+                oatfat = App.input.nextDouble();
+                corrChoice1 = true;
+            }
+            else
+            {
+                System.out.println("Du måste ange ett nummer (minst 0,1). ");
+                oatfat = 0;
+                corrChoice1 = false;
+            }
+            
+        } while (!corrChoice1);
+
+        do
+        {
+            App.clearTerm();
+            System.out.println("-=Havremjölk=-");
+            System.out.println("Hur många liter vill du beställa? ");
+            if (App.input.hasNextDouble())
+            {
+                
+                oatLiter = App.input.nextDouble();
+                corrChoice2 = true;
+            }
+            else
+            {
+                System.out.println("Du måste ange en mängd (minst 0,5). ");
+                oatLiter = 0;
+                corrChoice2 = false;
+            }
+            
+        } while (!corrChoice2);
         
+        OatMilk addedOatMilk = new OatMilk(oatfat, oatLiter);
+        oatMilks.add(addedOatMilk);
+        App.clearTerm();
+        System.out.println("-=Havremjölk=-");
+        System.out.println(oatLiter + " liter med " + oatfat + "% fetthalt har lagts till i varukorgen. ");
+        App.input.nextLine();
     }
     
     public static List<OatMilk>getOatMilkList()

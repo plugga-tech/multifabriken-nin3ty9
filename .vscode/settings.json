@@ -1,7 +1,10 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "files.encoding": "utf8",
+    "java.format.settings.url": "C:\\SynologyDrive\\D Studies\\Java JTU\\Code\\JAVA\\formatting.xml",
+    "java.format.settings.profile": "GoogleStyle",
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+    "java.project.referencedLibraries": []
 }
