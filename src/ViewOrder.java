@@ -43,7 +43,8 @@ public class ViewOrder
             case '3':
 
                 App.clearTerm();
-                Candy.addCandy();;
+                Candy.addCandy();
+                App.input.nextLine();
 
                 break;
 
@@ -59,8 +60,7 @@ public class ViewOrder
 
                 App.clearTerm();
                 orderDone = true;
-                App.input.nextLine();
-
+                
                 break;
 
             default:

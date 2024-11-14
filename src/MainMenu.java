@@ -5,26 +5,27 @@ public class MainMenu
     {
         char menChoice = 0;
 
-        App.clearTerm();
-        System.out.println("    Välkommen till ");
-        System.out.println("-=[| MULTIFABRIKEN |]=-");
-        System.out.println("-------------------");
-        System.out.println("Välj ett alternativ ");
-        System.out.println("[1] Varukorg ");
-        System.out.println("[2] Våra produkter ");
-        System.out.println("[3] Lägg beställning och avsluta ");
-
-        menChoice = App.input.next().charAt(0);
-        App.input.nextLine();
-
         do
-        { 
+        {
+            
+            App.clearTerm();
+            System.out.println("    Välkommen till ");
+            System.out.println("-=[| MULTIFABRIKEN |]=-");
+            System.out.println("-------------------");
+            System.out.println("Välj ett alternativ ");
+            System.out.println("[1] Varukorg ");
+            System.out.println("[2] Våra produkter ");
+            System.out.println("[3] Lägg beställning och avsluta ");
+
+            menChoice = App.input.next().charAt(0);
+            App.input.nextLine();
+
             switch (menChoice)
             {
             case '1':
 
                 App.clearTerm();
-                ViewOrder.viewOrder();
+                ViewCart.viewCart();
                 App.input.nextLine();
 
                 break;
@@ -33,16 +34,24 @@ public class MainMenu
 
                 App.clearTerm();
                 ViewOrder.viewOrder();
-                App.input.nextLine();
 
                 break;
 
             case '3':
 
-                App.clearTerm();
-                ViewCart.viewCart();
-
+            App.clearTerm();
+            if (Car.getCarList().size() < 1 && Candy.getCandyList().size() < 1 && Pipe.getPipeList().size() < 1
+            && OatMilk.getOatMilkList().size() < 1)
+            {
                 return false;
+            } 
+            else
+            {
+                System.out.println("Din beställning har mottagits. ");
+                System.out.println("------------------------------------------------------------------------------");
+                ViewCart.viewCart();
+                return false;
+            }
 
             default:
 
