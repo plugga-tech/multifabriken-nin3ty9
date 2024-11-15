@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Pipe
 {
-    private int pipeDiam;
-    private int pipeLength;
+    private final int pipeDiam;
+    private final int pipeLength;
 
     public Pipe(int pipeDiam, int pipeLength)
     {
@@ -12,7 +12,7 @@ public class Pipe
         this.pipeLength = pipeLength;
     }
 
-    public static List<Pipe> pipes = new ArrayList<Pipe>();
+    public static List<Pipe> pipes = new ArrayList<>();
 
     public static void addPipe()
     {
@@ -29,13 +29,24 @@ public class Pipe
             if (App.input.hasNextInt())
             {
                 pipeDiam = App.input.nextInt();
-                corrChoice1 = true;
+                
+                if (pipeDiam < 0.5)
+                {
+                    System.out.println("Minsta diameter är 2mm. ");
+                    App.input.nextLine();
+                    App.input.nextLine();
+                }
+                else 
+                {
+                    corrChoice1 = true;
+                }
             }
             else
             {
-                System.out.println("Du måste ange en längd (i hela mm). ");
+                System.out.println("Du måste ange en diameter (i hela mm). ");
                 pipeDiam = 0;
-                corrChoice1 = false;
+                App.input.nextLine();
+                App.input.nextLine();
             }
             
         } while (!corrChoice1);
@@ -47,15 +58,25 @@ public class Pipe
             System.out.println("Vilken längd (i mm) ska röret ha? ");
             if (App.input.hasNextInt())
             {
-                
                 pipeLength = App.input.nextInt();
-                corrChoice2 = true;
+
+                if (pipeLength < 10)
+                {
+                    System.out.println("Minsta längd är 10mm. ");
+                    App.input.nextLine();
+                    App.input.nextLine();
+                }
+                else 
+                {
+                    corrChoice2 = true;
+                }
             }
             else
             {
-                System.out.println("Du måste ange en mängd (minst 0,5). ");
+                System.out.println("Du måste ange en längd (minst 10mm). ");
                 pipeLength = 0;
-                corrChoice2 = false;
+                App.input.nextLine();
+                App.input.nextLine();
             }
             
         } while (!corrChoice2);

@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Candy
 {
-    private String candFlavor;
-    private int candNumber;
+    private final String candFlavor;
+    private final int candNumber;
 
     public Candy(String candFlavor, int candNumber)
     {
@@ -12,7 +12,7 @@ public class Candy
         this.candNumber = candNumber;
     }
 
-    public static List<Candy> candies = new ArrayList<Candy>();
+    public static List<Candy> candies = new ArrayList<>();
 
     public static void addCandy()
     {
@@ -26,16 +26,17 @@ public class Candy
             App.clearTerm();
             System.out.println("-=Godis=-");
             System.out.println("Vilken smak vill du beställa? ");
-            if (App.input.hasNextLine())
-            {
-                candFlavor = App.input.nextLine();
-                corrChoice1 = true;
-            }
-            else
+            
+            candFlavor = App.input.nextLine();
+
+            if (candFlavor.equals("") || candFlavor.equals(" "))
             {
                 System.out.println("Du måste ange en smak. ");
-                candFlavor = "";
-                corrChoice1 = false;
+                App.input.nextLine();
+            }
+            else 
+            {
+                corrChoice1 = true;
             }
             
         } while (!corrChoice1);
@@ -47,15 +48,25 @@ public class Candy
             System.out.println("Hur många godisbitar vill du beställa? ");
             if (App.input.hasNextInt())
             {
-                
                 candNumber = App.input.nextInt();
-                corrChoice2 = true;
+
+                if (candNumber < 1)
+                {
+                    System.out.println("Du måste ange ett antal. ");
+                    App.input.nextLine();
+                    App.input.nextLine();
+                }
+                else 
+                {
+                    corrChoice2 = true;
+                }
             }
             else
             {
                 System.out.println("Du måste ange ett antal. ");
                 candNumber = 0;
-                corrChoice2 = false;
+                App.input.nextLine();
+                App.input.nextLine();
             }
             
         } while (!corrChoice2);

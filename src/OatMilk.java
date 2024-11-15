@@ -3,8 +3,8 @@ import java.util.List;
 
 public class OatMilk
 {
-    private double oatFat;
-    private double oatLiter;
+    private final double oatFat;
+    private final double oatLiter;
 
     public OatMilk(double oatFat, double oatLiter)
     {
@@ -30,7 +30,7 @@ public class OatMilk
         this.oatLiter = (double) oatLiter;
     }
 
-    public static List<OatMilk> oatMilks = new ArrayList<OatMilk>();
+    public static List<OatMilk> oatMilks = new ArrayList<>();
 
     public static void addOatMilk()
     {
@@ -47,15 +47,19 @@ public class OatMilk
             if (App.input.hasNextDouble())
             {
                 oatfat = App.input.nextDouble();
-                
-                if (oatfat < 0.1)
-                {
+
+                if (oatfat < 0.1) {
                     System.out.println("Minsta fetthalt är 0,1%. ");
-                    corrChoice1 = false;
+                    App.input.nextLine();
+                    App.input.nextLine();
+                }
+                else if (oatfat > 15)
+                {
+                    System.out.println("Högsta fetthalt är 15%. ");
                     App.input.nextLine();
                     App.input.nextLine();
                 } 
-                else
+                else 
                 {
                     corrChoice1 = true;
                 }
@@ -63,10 +67,9 @@ public class OatMilk
             else
             {
                 System.out.println("Du måste ange en fetthalt (med siffror), decimaler anges med komma. ");
-                App.input.nextLine();
-                App.input.nextLine();
                 oatfat = 0;
-                corrChoice1 = false;
+                App.input.nextLine();
+                App.input.nextLine();
             }
             
         } while (!corrChoice1);
@@ -78,13 +81,11 @@ public class OatMilk
             System.out.println("Hur många liter vill du beställa? ");
             if (App.input.hasNextDouble())
             {
-                
                 oatLiter = App.input.nextDouble();
                 
                 if (oatLiter < 0.5)
                 {
                     System.out.println("Minsta mängd är 0,5 liter. ");
-                    corrChoice2 = false;
                     App.input.nextLine();
                     App.input.nextLine();
                 }
@@ -98,8 +99,7 @@ public class OatMilk
                 System.out.println("Du måste ange en mängd (med siffror), decimaler anges med komma. ");
                 oatLiter = 0;
                 App.input.nextLine();
-                App.input.nextLine();
-                corrChoice2 = false;
+                App.input.nextLine();                
             }
             
         } while (!corrChoice2);

@@ -3,9 +3,9 @@ import java.util.List;
 
 public class Car
 {
-    private String carBrand;
-    private String carPlate;
-    private String carColor;
+    private final String carBrand;
+    private final String carPlate;
+    private final String carColor;
 
     public Car(String carBrand, String carPlate, String carColor)
     {
@@ -14,7 +14,7 @@ public class Car
         this.carColor = carColor;
     }
 
-    public static List<Car> cars = new ArrayList<Car>();
+    public static List<Car> cars = new ArrayList<>();
 
     public static void addCar()
     {
@@ -25,16 +25,17 @@ public class Car
         String carPlate;
         String carColor;
 
-        System.out.println("-=Bilar=-");
-        System.out.println("Vilket märke ska bilen vara av? ");
-        carBrand = App.input.nextLine();
-
         do
         {
+            App.clearTerm();
+            System.out.println("-=Bilar=-");
+            System.out.println("Vilket märke ska bilen vara av? ");
+            carBrand = App.input.nextLine();
+
             if ("".equals(carBrand) || " ".equals(carBrand))
             {
                 System.out.println("Du måste välja ett bilmärke. ");
-                carBrand = App.input.nextLine();
+                App.input.nextLine();
             } 
             else
             {
@@ -43,17 +44,17 @@ public class Car
 
         } while (!corrChoice1);
 
-        App.clearTerm();
-        System.out.println("-=Bilar=-");
-        System.out.println("Vilket registreringsnummer ska den ha? ");
-        carPlate = App.input.nextLine();
-
         do
         {
+            App.clearTerm();
+            System.out.println("-=Bilar=-");
+            System.out.println("Vilket registreringsnummer ska den ha? ");
+            carPlate = App.input.nextLine();
+
             if ("".equals(carPlate) || " ".equals(carPlate))
             {
                 System.out.println("Du måste ange ett registreringsnummer. ");
-                carPlate = App.input.nextLine();
+                App.input.nextLine();
             } 
             else
             {
@@ -62,17 +63,17 @@ public class Car
 
         } while (!corrChoice2);
 
-        App.clearTerm();
-        System.out.println("-=Bilar=-");
-        System.out.println("Vilken färg ska den ha? ");
-        carColor = App.input.nextLine();
-
         do
         {
+            App.clearTerm();
+            System.out.println("-=Bilar=-");
+            System.out.println("Vilken färg ska den ha? ");
+            carColor = App.input.nextLine();
+
             if ("".equals(carColor) || " ".equals(carColor))
             {
                 System.out.println("Du måste välja en färg. ");
-                carColor = App.input.nextLine();
+                App.input.nextLine();
             } 
             else
             {
