@@ -1,5 +1,6 @@
 public class ViewCart
 {
+//Metod för att visa varukorgen. Om den är tom får vi ett meddelande om detta:
     public static void viewCart()
     {
         if (Car.getCarList().size() < 1 && Candy.getCandyList().size() < 1 && Pipe.getPipeList().size() < 1
@@ -10,7 +11,7 @@ public class ViewCart
         else
         {
             System.out.println("Dina valda produkter: ");
-
+//Har vi lagt till något i varukorgen så körs looparna tills de skrivit ut alla produkter i korgen:
             for (int i = 0; i < Car.getCarList().size(); i++)
             {
                 System.out.println("------------------------------------------------------------------------------");

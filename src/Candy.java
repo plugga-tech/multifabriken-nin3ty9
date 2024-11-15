@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Alla produktklasser är uppbyggda på ungefär samma sätt med attribut, konstruktor, en lista för beställda objekt och en metod för att beställa:
 public class Candy
 {
     private final String candFlavor;
@@ -13,14 +13,14 @@ public class Candy
     }
 
     public static List<Candy> candies = new ArrayList<>();
-
+//Metod för att beställa:
     public static void addCandy()
     {
         boolean corrChoice1 = false;
         boolean corrChoice2 = false;
         String candFlavor;
         int candNumber;
-
+//Loopar som tar emot input och kontrollerar om den är korrekt:
         do
         {
             App.clearTerm();
@@ -70,7 +70,7 @@ public class Candy
             }
             
         } while (!corrChoice2);
-        
+//Objektet/produkten läggs till i sin lista:        
         Candy addedCandy = new Candy(candFlavor, candNumber);
         candies.add(addedCandy);
         App.clearTerm();
@@ -78,7 +78,7 @@ public class Candy
         System.out.println(candNumber + " godisbitar med smak av " + candFlavor + " har lagts till i varukorgen. ");
         App.input.nextLine();
     }
-
+//Getters så att vi kan nå listan och dess innehåll från andra klasser:
     public static List<Candy>getCandyList()
     {
         return candies;
