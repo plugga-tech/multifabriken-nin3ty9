@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class App
 {
-    public static Scanner input = new Scanner(System.in);
+//Scanner som kan läsa specialtecken:
+    public static Scanner input = new Scanner(System.console().reader());
 
 //Metod för att rensa skärmen så vi får en ren och snygg meny:
     static void clearTerm()                                     
