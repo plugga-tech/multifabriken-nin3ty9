@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Alla produktklasser är uppbyggda på ungefär samma sätt med attribut, konstruktor, en lista för beställda objekt och en metod för att beställa:
 public class Pipe
 {
     private final int pipeDiam;
@@ -13,14 +13,14 @@ public class Pipe
     }
 
     public static List<Pipe> pipes = new ArrayList<>();
-
+//Metod för att beställa:
     public static void addPipe()
     {
         boolean corrChoice1 = false;
         boolean corrChoice2 = false;
         int pipeDiam;
         int pipeLength;
-
+//Loopar som tar emot input och kontrollerar om den är korrekt:
         do
         {
             App.clearTerm();
@@ -80,7 +80,7 @@ public class Pipe
             }
             
         } while (!corrChoice2);
-        
+//Objektet/produkten läggs till i sin lista:        
         Pipe addedPipe = new Pipe(pipeDiam, pipeLength);
         pipes.add(addedPipe);
         App.clearTerm();
@@ -88,7 +88,7 @@ public class Pipe
         System.out.println("Ett rör med diametern " + pipeDiam + "mm och längden " + pipeLength + "mm har lagts till i varukorgen. ");
         App.input.nextLine();
     }
-
+//Getters så att vi kan nå listan och dess innehåll från andra klasser:
     public static List<Pipe>getPipeList()
     {
         return pipes;

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Alla produktklasser är uppbyggda på ungefär samma sätt med attribut, konstruktor, en lista för beställda objekt och en metod för att beställa:
 public class OatMilk
 {
     private final double oatFat;
@@ -12,33 +12,15 @@ public class OatMilk
         this.oatLiter = oatLiter;
     }
 
-    public OatMilk(int oatFat, double oatLiter)
-    {
-        this.oatFat = (double) oatFat;
-        this.oatLiter = oatLiter;
-    }
-
-    public OatMilk(double oatFat, int oatLiter)
-    {
-        this.oatFat = oatFat;
-        this.oatLiter = (double)oatLiter;
-    }
-    
-    public OatMilk(int oatFat, int oatLiter)
-    {
-        this.oatFat = (double) oatFat;
-        this.oatLiter = (double) oatLiter;
-    }
-
     public static List<OatMilk> oatMilks = new ArrayList<>();
-
+//Metod för att beställa:
     public static void addOatMilk()
     {
         boolean corrChoice1 = false;
         boolean corrChoice2 = false;
         double oatfat;
         double oatLiter;
-
+//Loopar som tar emot input och kontrollerar om den är korrekt:
         do
         {
             App.clearTerm();
@@ -103,7 +85,7 @@ public class OatMilk
             }
             
         } while (!corrChoice2);
-        
+//Objektet/produkten läggs till i sin lista:        
         OatMilk addedOatMilk = new OatMilk(oatfat, oatLiter);
         oatMilks.add(addedOatMilk);
         App.clearTerm();
@@ -111,7 +93,7 @@ public class OatMilk
         System.out.println(oatLiter + " liter med " + oatfat + "% fetthalt har lagts till i varukorgen. ");
         App.input.nextLine();
     }
-    
+//Getters så att vi kan nå listan och dess innehåll från andra klasser:    
     public static List<OatMilk>getOatMilkList()
     {
         return oatMilks;

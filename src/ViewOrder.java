@@ -1,11 +1,11 @@
 public class ViewOrder
 {
-    
+    //Metod som sköter beställningsmenyn:
     public static void viewOrder()
     {
         boolean orderDone = false;
         char orderChoice = 0;
-
+    //Även denna meny styrs av en loopad switch:
         while (!orderDone)
         {
             App.clearTerm();
@@ -21,7 +21,7 @@ public class ViewOrder
         
             orderChoice = App.input.next().charAt(0);
             App.input.nextLine();
-
+    //Beroende på input skickas vi till olika klasser som definierar våra olika produkter och deras metoder för beställning.
             switch (orderChoice)
             {
             case '1':
@@ -64,7 +64,7 @@ public class ViewOrder
                 break;
 
             default:
-
+    //Meddelande vid felaktig input:
                 System.out.println("Du måste välja ett av alternativen 1-5. ");
                 App.input.nextLine();
 
